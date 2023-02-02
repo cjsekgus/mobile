@@ -1,0 +1,199 @@
+@charset "uft-8";
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color:inherit;
+}
+body {
+    color: #333;
+    line-height: 1;
+    font-family: 'GmarketSansMedium';
+    margin-bottom: 60px;
+}
+
+.inner {
+    /* width: calc(100% - 40px); */
+    width: 1280px;
+    margin: 0 auto;
+}
+.title {
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 😊 header */
+
+header {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50px;
+}
+header h1 {
+ font-size: 30px;
+}
+
+header nav ul {
+    display: flex;
+    margin-top: 15px;
+}
+header nav ul li {
+    margin-right: 15px;
+}
+
+/* 😊 main_visual */
+.main_visual {
+   /*  width: 430px; */
+    height: 295px;
+    border-radius: 0 0 70px 70px;
+    box-shadow: 0 4px 45px rgba(0,0,0,0.25);
+    position: relative;
+}
+
+.main_visual figure {
+    width: calc( 100% - 40px);
+    height: 110px;
+    border-radius: 70px;
+    overflow: hidden;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.main_visual figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+/* 😊 .cont01 */
+.cont01 {
+    padding-top: 60PX;
+}
+
+.cont01 .list {
+    display: flex;
+    justify-content: space-between;
+    height: 160px;
+    
+}
+.cont01 .list .item {
+    width: calc( 100% / 4 - 10PX);
+}
+
+.cont01 .list .item figure {
+    height: 160px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.cont01 .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont01 .list .item p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 😊 cont02 */
+.cont02 {
+    padding-top: 50px;
+
+}
+.cont02 .list {
+    display: flex;
+    border-radius: 10px;
+    height: 160px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    align-items: center;
+    padding: 0 20px;
+}
+
+.cont02 .list figure {
+    border-radius: 10px;
+    width: 102px;
+    height: 124px;
+    overflow: hidden;
+    margin-right: 11px;
+}
+
+.cont02 .list figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cont02 .list .info p {
+    font-size: 14px;
+    margin: 3px 0 5pz;
+}
+
+.cont02 .list .info div span {
+    font-size: 14px;
+}
+
+/* 😊 .bottom_menu */
+
+.bottom_menu {
+    width: 100%;
+    height: 55px;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -4px 25px rgba(0,0,0,0.25);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.bottom_menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 40px;
+}
+
+.bottom_menu ul li {
+    line-height: 55px;
+    display: flex;
+}
+
+/* 뷰포트 1280px 이하일 때
+스타일 적용 */
+
+@media screen and (max-width: 1280px) {
+    .inner {width: calc(100% - 40px);}
+}
+
+/* 뷰포트 430px 이하일 때
+ .cont01 .list .item 중에서
+ 마지막에 있는 item은 삭제
+ width값을 3등분하고 간격 10씩 잡히도록 설정*/
+@media screen and (max-width: 430px) {
+    .cont01 .list .item {
+        width: calc(100% / 3 - 10px);
+    }
+    .cont01 .list .item:nth-child(4) {
+        display: none;
+        }
+}
